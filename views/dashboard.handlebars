@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a Blog Post:</h3>
+
+    <form class="form new-blogPost-form">
+      <div class="form-group">
+        <label for="blogPost-name">post name:</label>
+        <input class="form-input" type="text" id="blogPost-name" name="blogPost-name" />
+      </div>
+      <div class="form-group">
+        <label for="blogPost-cont">content:</label>
+        <textarea class="form-input" id="blogPost-cont" name="blogPost-cont"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if blogPosts.length}}
+  <div class="col-md-6 blogPost-list">
+    <h3>Current Posts:</h3>
+
+    {{#each blogPosts as |blogPost|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/blogPost/{{blogPost.id}}">{{blogPost.name}}</a></h4>
+      </div>
+
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/dashboard.js"></script>
