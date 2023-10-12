@@ -4,12 +4,20 @@
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
 
   <p>
-    <div class= "blog-list">
-     <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+  <div class="blog-list">
+    <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+  </div><br><br>
+  <div >
+    <label for="newName">Name:</label>
+    <input type="text" id="newName">
+    <label for="newCpntent">Content:</label>
+    <input type="text" id="newContent">
+    <div class="update">
+    <button class="btn btn-primary" data-id="{{id}}">update</button>
     </div>
-    <button class="btn btn-primary">update</button>
+  </div>
   </p>
 </div>
 
 
-<script src="./js/blog.js"></script>
+<script src="../js/blog.js"></script>
