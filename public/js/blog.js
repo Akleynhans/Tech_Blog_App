@@ -30,7 +30,7 @@ const updateButtonHandler = async (event) => {
                 method: 'PUT',
                 body: JSON.stringify({ name, content }),
                 headers: {
-                  'Content-Type': 'application/json',
+                    'Content-Type': 'application/json',
                 },
             });
 
@@ -46,7 +46,7 @@ const updateButtonHandler = async (event) => {
 
 const commentButtonHandler = async (event) => {
 
-   
+
     const content = document.querySelector('#newComment').value.trim();
 
 
@@ -60,7 +60,7 @@ const commentButtonHandler = async (event) => {
                 method: 'POST',
                 body: JSON.stringify({ content }),
                 headers: {
-                  'Content-Type': 'application/json',
+                    'Content-Type': 'application/json',
                 },
             });
 
@@ -80,4 +80,8 @@ document
 document
     .querySelector('.update')
     .addEventListener('click', updateButtonHandler);
+document
+    .querySelector('.comment')
+    .addEventListener('click', commentButtonHandler);
+
 
