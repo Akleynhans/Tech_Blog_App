@@ -7,17 +7,25 @@
   <div class="blog-list">
     <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
   </div><br><br>
-  <div >
+  <div>
     <label for="newName">Name:</label>
     <input type="text" id="newName">
-    <label for="newCpntent">Content:</label>
+    <label for="newContent">Content:</label>
     <input type="text" id="newContent">
     <div class="update">
-    <br><button class="btn btn-sm" data-id="{{id}}">UPDATE</button>
+      <br><button class="btn btn-sm" data-id="{{id}}">UPDATE</button>
     </div>
   </div>
-  </p>
-</div>
+
+  <div>
+    <label for="newComment">Add Comment:</label>
+    <input type="text" id="newComment">
+    <div class="comment">
+      <br><button class="btn btn-sm" data-id="{{id}}">Comment</button>
+    </div>
+
+    </p>
+  </div>
 
 
-<script src="../js/blog.js"></script>
+  <script src="../js/blog.js"></script>
