@@ -64,6 +64,7 @@ router.post('/:id', withAuth, async (req, res) => {
     const newComment = await Comment.create({
       ...req.body,
       user_id: req.session.user_id,
+      blog_id: req.body.blog_id,
     },
       {
         where: {
@@ -71,7 +72,7 @@ router.post('/:id', withAuth, async (req, res) => {
         },
       }
     );
-    console.log('check');
+ 
     res.status(200).json(newComment);
   } catch (err) {
     res.status(400).json(err);

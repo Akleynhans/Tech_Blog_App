@@ -48,18 +48,19 @@ const commentButtonHandler = async (event) => {
 
 
     const content = document.querySelector('#newComment').value.trim();
-   
 
-    
+
+
     if (event.target.hasAttribute('data-id')) {
 
         if (content) {
 
             const id = event.target.getAttribute('data-id');
+            const blog_id = event.target.getAttribute('data-id');
 
             const response = await fetch(`/api/blogs/${id}`, {
                 method: 'POST',
-                body: JSON.stringify({ content }),
+                body: JSON.stringify({ content, blog_id }),
                 headers: {
                     'Content-Type': 'application/json',
                 },
