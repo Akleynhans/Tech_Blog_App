@@ -22,22 +22,22 @@
     <input type="text" id="newComment">
     <div class="comment">
       <br><button class="btn btn-sm" data-id="{{id}}">Comment</button>
-    </div>
+    </div><br><br>
 
-  {{#if comments.length}}
-  <div class="col-md-6 comment-list">
-    <h3>Current Comments:</h3>
+    {{#if comments.length}}
+    <div class="comment-list">
+      <h3>Current Comments:</h3>
 
-    {{#each comments as |comment|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4>{{comment.content}}</h4>
+      {{#each comments as |comment|}}
+      <div>
+        <div id="comment">
+          <p>{{comment.content}}</p>
+        </div>
+
       </div>
-
+      {{/each}}
     </div>
-    {{/each}}
-  </div>
-  {{/if}}
+    {{/if}}
 
 
   </div>
