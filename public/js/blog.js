@@ -44,6 +44,36 @@ const updateButtonHandler = async (event) => {
     }
 };
 
+const commentButtonHandler = async (event) => {
+
+   
+    const content = document.querySelector('#newComment').value.trim();
+
+
+    if (event.target.hasAttribute('data-id')) {
+
+        if (content) {
+
+            const id = event.target.getAttribute('data-id');
+
+            const response = await fetch(`/api/blogs/${id}`, {
+                method: 'PUT',
+                body: JSON.stringify({ content }),
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+            });
+
+            if (response.ok) {
+                document.location.replace(`/blog/${id}`);
+            } else {
+                alert('Failed to add comment');
+            }
+
+        }
+    }
+};
+
 document
     .querySelector('.blog-list')
     .addEventListener('click', delButtonHandler);
