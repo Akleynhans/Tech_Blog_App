@@ -78,20 +78,5 @@ router.post('/:id', withAuth, async (req, res) => {
   }
 });
 
-// router.get('/:id', async (req, res) => {
-//   try {
-//     const commentData = await Comment.findAll();
-
-//     // Serialize data so the template can read it
-//     const comments = commentData.map((comment) => comment.get({ plain: true }));
-
-
-//     res.render('blog', {
-//       ...comments,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 module.exports = router;

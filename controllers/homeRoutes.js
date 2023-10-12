@@ -41,7 +41,14 @@ router.get('/blog/:id', async (req, res) => {
 
     const blog = blogData.get({ plain: true });
 
-    const commentData = await Comment.findAll();
+    const commentData = await Comment.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
 
     // Serialize data so the template can read it
     const comments = commentData.map((comment) => comment.get({ plain: true }));
