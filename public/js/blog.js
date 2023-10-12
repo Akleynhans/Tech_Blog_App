@@ -48,8 +48,9 @@ const commentButtonHandler = async (event) => {
 
 
     const content = document.querySelector('#newComment').value.trim();
+   
 
-
+    
     if (event.target.hasAttribute('data-id')) {
 
         if (content) {

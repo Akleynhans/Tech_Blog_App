@@ -15,7 +15,7 @@
     <div class="update">
       <br><button class="btn btn-sm" data-id="{{id}}">UPDATE</button>
     </div>
-  </div>
+  </div><br><br>
 
   <div>
     <label for="newComment">Add Comment:</label>
@@ -24,19 +24,22 @@
       <br><button class="btn btn-sm" data-id="{{id}}">Comment</button>
     </div>
 
-    {{#each commentss as |comment| }}
-    <div class="row mb-4 comment">
-      <div class="col-md-5">
-        <h2>
-          {{comment.content}}
-        </h2>
-        <p>Created by {{comment.user.name}} on {{format_date comment.date_created}}</p>
+  {{#if comments.length}}
+  <div class="col-md-6 comment-list">
+    <h3>Current Comments:</h3>
+
+    {{#each comments as |comment|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4>{{comment.content}}</h4>
       </div>
 
     </div>
     {{/each}}
+  </div>
+  {{/if}}
 
-    </p>
+
   </div>
 
 

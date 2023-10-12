@@ -52,7 +52,7 @@ router.put('/:id', withAuth, async (req, res) => {
       res.status(404).json({ message: 'No blog found with this id!' });
       return;
     }
-    console.log('content');
+
     res.status(200).json(blogData);
   } catch (err) {
     res.status(500).json(err);
@@ -64,12 +64,34 @@ router.post('/:id', withAuth, async (req, res) => {
     const newComment = await Comment.create({
       ...req.body,
       user_id: req.session.user_id,
-    });
-
+    },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+    console.log('check');
     res.status(200).json(newComment);
   } catch (err) {
     res.status(400).json(err);
   }
 });
+
+// router.get('/:id', async (req, res) => {
+//   try {
+//     const commentData = await Comment.findAll();
+
+//     // Serialize data so the template can read it
+//     const comments = commentData.map((comment) => comment.get({ plain: true }));
+
+
+//     res.render('blog', {
+//       ...comments,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;
