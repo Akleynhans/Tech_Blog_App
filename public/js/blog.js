@@ -57,7 +57,7 @@ const commentButtonHandler = async (event) => {
             const id = event.target.getAttribute('data-id');
 
             const response = await fetch(`/api/blogs/${id}`, {
-                method: 'PUT',
+                method: 'POST',
                 body: JSON.stringify({ content }),
                 headers: {
                   'Content-Type': 'application/json',
