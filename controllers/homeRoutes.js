@@ -60,7 +60,7 @@ router.get('/blog/:id', async (req, res) => {
 
     // Serialize data so the template can read it
     const comments = commentData.map((comment) => comment.get({ plain: true }));
-    console.log(comments);
+
 
     res.render('blog', {
       ...blog,
